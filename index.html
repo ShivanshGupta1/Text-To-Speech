@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body onload="myfunction()">
+    <div id="mario-chat">
+        <div id="chat-window">
+            <div id="output">
+                
+            </div>
+        </div>
+        <input type="text" id="handle" placeholder="Your Name">
+            <input type="text" id="message" placeholder="Text" >
+            <h5 id="1" style="display: none;">Loading</h5>
+             <div id="2" style="display: none;" class='loader'> </div>
+                <button id="send" type="submit" onclick="">Send</button>
+                
+                
+                
+        </div>
+
+
+   
+<script>
+
+    let n = document.getElementById('handle')
+    let message = document.getElementById('message')
+    let output = document.getElementById('output')
+    let button = document.getElementById('send')
+    let ans;
+    let h1 = document.getElementById("1")
+    let div = document.getElementById("2")
+    button.addEventListener('click', ()=>{  
+        if (message.value!="")    
+        h1.style.display = "block"
+        div.style.display = "block"
+        setTimeout(function(){ 
+            h1.style.display = "none"
+        div.style.display = "none"
+        var msg = new SpeechSynthesisUtterance(message.value); 
+        window.speechSynthesis.speak(msg);
+         
+    },5000)
+       
+    
+    })
+    function myfunction(){
+        output.innerHTML += '<p> <strong>'+"Zach"+': </strong> '+"Hi there! I am Zach the AI Chatbot"+'</p>'
+        output.innerHTML += '<p> <strong>'+"Zach"+': </strong> '+"I am also a professional speaker!"+'</p>'
+        output.innerHTML += '<p> <strong>'+"Zach"+': </strong> '+"Give me an text and I will speak it! "+'</p>'
+   
+
+        
+    }
+        
+       
+    
+</script>
+</body>
+<style>
+ 
+</style>
+</html>
+
+
+
+
+
